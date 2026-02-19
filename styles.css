@@ -1,0 +1,119 @@
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+font-family:Poppins;
+background:black;
+color:white;
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+.navbar{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+padding:20px 60px;
+background:rgba(0,0,0,.7);
+backdrop-filter:blur(20px);
+z-index:1000;
+}
+
+.navbar ul{display:flex;gap:30px;list-style:none;}
+.navbar a{color:white;text-decoration:none;transition:.3s;}
+.navbar a:hover{color:gold;}
+
+.logo{
+font-family:Orbitron;
+color:gold;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+background:linear-gradient(45deg, green, gold, black);
+background-size:400%;
+animation:bg 10s infinite alternate;
+position:relative;
+overflow:hidden;
+}
+
+@keyframes bg{
+0%{background-position:left;}
+100%{background-position:right;}
+}
+
+.hero-title{
+font-size:4rem;
+font-family:Orbitron;
+text-shadow:0 0 40px gold;
+animation:float 3s infinite ease-in-out;
+}
+
+@keyframes float{
+50%{transform:translateY(-15px);}
+}
+
+.hero-sub{opacity:.8}
+
+/* SMOKE EFFECT */
+
+.smoke{
+position:absolute;
+width:200%;
+height:200%;
+background:url("https://i.imgur.com/L6X2F8A.png");
+animation:smoke 40s linear infinite;
+opacity:.15;
+}
+
+@keyframes smoke{
+0%{transform:translateY(0);}
+100%{transform:translateY(-800px);}
+}
+
+/* SECTIONS */
+
+.section{
+padding:120px 60px;
+text-align:center;
+}
+
+/* CARDS */
+
+.cards-section{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:50px;
+padding:120px 60px;
+perspective:1200px;
+}
+
+.card{
+height:260px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:1.5rem;
+font-weight:bold;
+background:rgba(255,255,255,.1);
+backdrop-filter:blur(20px);
+border-radius:20px;
+transition:transform .1s;
+box-shadow:0 0 30px rgba(0,255,0,.4);
+transform-style:preserve-3d;
+cursor:pointer;
+}
+
+/* PARALLAX */
+
+.section:nth-child(even){
+background:linear-gradient(to right,black,green);
+}
